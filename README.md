@@ -1,0 +1,37 @@
+# 🚀 Upload Automático para GitHub via Termux
+
+Um script simples e divertido para enviar pastas do **Termux** para o GitHub automaticamente, com **mensagens animadas e emojis**!  
+
+Perfeito para versionar projetos rapidamente sem complicação.
+
+---
+
+## 📝 Descrição
+
+Este script faz tudo por você:
+
+1. 💻 Verifica se o **Git** está instalado e instala se necessário.  
+2. 📂 Inicializa o repositório (`git init`) caso ainda não exista.  
+3. 🔒 Configura o diretório como seguro (`safe.directory`).  
+4. ✏️ Configura usuário e e-mail do Git (opcional).  
+5. ➕ Adiciona todos os arquivos e realiza um commit automático.  
+6. 🔑 Pede seu **Personal Access Token** do GitHub na hora do push.  
+7. 🚀 Envia os arquivos para a branch principal (`main` por padrão).  
+
+---
+
+## ⚡ Requisitos
+
+- Termux no Android  
+- Git instalado (`pkg install git`)  
+- Conta no GitHub  
+- [Personal Access Token](https://github.com/settings/tokens) com permissão `repo`  
+
+---
+
+## 🚀 Como usar
+
+1. Baixe ou clone o script `upload.sh` na pasta do seu projeto.  
+2. Abra o Termux e vá para a pasta do projeto:
+```bash
+cd /sdcard/caminho/da/pasta
