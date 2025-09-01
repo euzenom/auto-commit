@@ -42,3 +42,11 @@ sh upload.sh
 ```
 4. Vai pedir o seu token, você cola e dá enter.
 5. Aparecerá a mensagem de concluído e seu projeto já vai estar no GitHub.
+
+---
+
+## ✅️ Processo concluído!
+
+---
+
+## ⚠️ Obs: não esqueça de configurar o REPO no arquivo.
