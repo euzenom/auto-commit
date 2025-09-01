@@ -29,7 +29,7 @@ Este script faz tudo por você:
 
 ---
 
-## 🚀 Como usar Obs: configure o REPO no arquivo.
+## 🚀 Como usar, Obs: (configure o REPO no arquivo.)
 
 1. Baixe ou clone o script `upload.sh` na pasta do seu projeto.  
 2. Abra o Termux e vá para a pasta do projeto exemplo:
