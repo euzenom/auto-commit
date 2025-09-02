@@ -11,53 +11,57 @@ BRANCH="main"
 # Branch principal
 DIR=$(pwd)
 # Diretório atual
+CYAN='\033[36m'
+NC='\033[0m'
+# Cor para os textos
 
 # =========================
 # VERIFICAÇÃO DO GIT
 # =========================
-echo "💻 Verificando Git.."
+echo "${CYAN}💻 Verificando Git..${NC}"
 if ! command -v git &> /dev/null; then
-echo "⚠️ Git não encontrado. Instalando..."
+echo "${CYAN}⚠️ Git não encontrado. Instalando...${NC}"
 pkg update -y && pkg install git -y
 else
-echo "✅ Git encontrado!"
+echo "${CYAN}✅ Git encontrado!${NC}"
 fi
 
 # =========================
 # INICIALIZAÇÃO DO REPO
 # =========================
 if [ ! -d "$DIR/.git" ]; then
-echo "📂 Inicializando repositório Git.."
+echo "${CYAN}📂 Inicializando repositório Git..${NC}"
 git init
 else
-echo "📂 Repositório Git já inicializado."
+echo "${CYAN}📂 Repositório Git já inicializado.${NC}"
 fi
 
 # =========================
 # CONFIGURANDO safe.directory
 # =========================
 git config --global --add safe.directory "$DIR"
-echo "🔒 Diretório configurado como seguro."
+echo "${CYAN}🔒 Diretório configurado como seguro.${NC}"
 
 # =========================
 # CONFIGURANDO USUÁRIO
 # =========================
 git config --global user.name "SeuNome"
 git config --global user.email "seuemail@example.com"
-echo "📧 Usuário e email configurados (opcional)."
+echo "${CYAN}📧 Usuário e email configurados (opcional).${NC}"
 
 # =========================
 # ADICIONANDO ARQUIVOS E COMMIT
 # =========================
+echo "${CYAN}➕ Adicionando arquivos (aguarde).${NC}"
 git add .
-echo "➕ Adicionando arquivos.."
+echo "${CYAN}♻️  Arquivos adicionados..${NC}"
 git commit -m "$COMMIT_MSG"
-echo "📝 Commit realizado: $COMMIT_MSG"
+echo "${CYAN}📝 Commit realizado:${NC} $COMMIT_MSG"
 
 # =========================
 # PEGAR TOKEN NA HORA
 # =========================
-echo -n "🔑 Digite seu GitHub Personal Access Token: "
+echo -n "${CYAN}🔑 Digite seu GitHub Personal Access Token:${NC} "
 read TOKEN
 
 # =========================
@@ -66,8 +70,8 @@ read TOKEN
 git remote remove origin 2>/dev/null
 git remote add origin https://$TOKEN@github.com/$REPO.git
 git branch -M $BRANCH
-echo "🚀 Enviando arquivos para GitHub.."
+echo "${CYAN}🚀 Enviando arquivos para GitHub..${NC}"
 git push -u origin $BRANCH
 
-echo "🎉 Upload concluído com sucesso!"
-echo "💡 Lembre-se: configure REPO como seu usuario/repositorio antes de usar o script."
+echo "${CYAN}🎉 Upload concluído com sucesso!${NC}"
+echo "${CYAN}💡 Lembre-se: configure REPO como seu usuario/repositorio antes de usar o script.${NC}"
